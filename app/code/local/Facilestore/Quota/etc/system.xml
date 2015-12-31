@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <facilestore translate="label" module="quota">
+            <label>Facile Store Extensions</label>
+            <sort_order>100</sort_order>
+        </facilestore>
+    </tabs>
+    <sections>
+        <facilestore_quota translate="label" module="quota">
+            <label>Parcelas Produtos</label>
+            <tab>facilestore</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+ 
+            <groups>
+                <general translate="label" module="quota">
+                    <label>Configurações de parcelas no produto</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+ 
+                    <fields>
+                        <enable translate="label">
+                            <label>Habilitar: </label>
+                            <comment>Habilitar parcelas nos produtos.</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enable>
+                        <qtdparcelas translate="label">
+                            <label>Quantidade de parcela: </label>
+                            <comment>Número de parcelas</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </qtdparcelas>
+                        <valorminimoparcela translate="label">
+                            <label>Valor mínimo da parcela: </label>
+                            <comment>Valor mínimo da parcela, informe "0" caso não tenha.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </valorminimoparcela>
+                        <juroscartao translate="label">
+                            <label>Juros: </label>
+                            <comment>Valor do juros ao mês, se não tive informe 0.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </juroscartao>
+                        <modelo translate="label">
+                            <label>Modo de exibição:</label>
+                            <comment>Modo de como será exibido, número de vezes ou a tabela de parcelamento. Somente aceito na tela de detalhe do produto, na listagem de produtos, por padrão é o número máximo de parcelas.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>quota/source_typemodel</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </modelo>
+                        <view_produtos_txt translate="label">
+                            <label>Texto Qtd. Parcelas - Detalhe</label>
+                            <comment>(Só funciona com a opção acima em "Número de vezes") Informe o texto para exibir, utilize as tags dinâmicas #qtd# e #valor#, pode usar tag html. Ex.: #qtd#x de #valor# (sem juros)</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </view_produtos_txt>
+                        <lista_produtos translate="label">
+                            <label>Mostrar na lista de produtos?</label>
+                            <comment>Habilitar parcelas na lista de produtos.</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </lista_produtos>
+                        <lista_produtos_txt translate="label">
+                            <label>Texto Qtd. Parcelas - Lista</label>
+                            <comment>Informe o texto para exibir, utilize as tags dinâmicas #qtd# e #valor#, pode usar tag html. Ex.: #qtd#x de #valor#</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </lista_produtos_txt>
+                    </fields>
+                </general>
+                <boleto translate="label" module="quota">
+                    <label>Configurações de desconto no boleto (Apenas Visualização)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Desconto no boleto ?</label>
+                            <comment>Exibir desconto no boleto, porem não está implementado para o Checkout. Só funciona para visualização.</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enable>
+                        <porcentagem_boleto translate="label">
+                            <label>Porcentagem Desc. Boleto: </label>
+                            <comment>Porcetagem do desconto em pagamento com Boleto.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </porcentagem_boleto>
+                        <txt_boleto translate="label">
+                            <label>Texto Boleto: </label>
+                            <comment>Informe o texto para exibir, utilize as tags dinâmicas #percent# e #valor#, caso necessite. Ex.: #percent#% Desc Boleto - #valor#</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </txt_boleto>
+                    </fields>
+                </boleto>
+            </groups>
+        </facilestore_quota>
+    </sections>
+</config>

@@ -1,0 +1,26 @@
+<?php if($this->isEnable()): ?>
+    <?php if($this->isBoleto()): ?>
+    <div class="boleto_desconto">
+        <?php echo $this->getDescBoleto(); ?>
+    </div>
+    <?php endif; ?>
+
+    <div class="parcelamento">
+        <?php if($this->isCatalog()): ?>
+            <?php $this->_setProduct($this->getProduct()); ?>
+            <?php echo $this->listaProdutosTxt() ?>
+        <?php else: ?>
+            <?php if($this->getModelo() == 'total_number'): ?>
+                <?php echo $this->viewProdutosTxt() ?>
+            <?php else : ?>
+                <ul>
+                    <?php foreach($this->getParcelas() as $parcela): ?>
+                        <li>
+                            <?php echo $parcela['numero']?>x  <?php echo $parcela['valor_parcela']; ?> - <?php echo $parcela['valor_parcela_total']; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
