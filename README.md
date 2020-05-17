@@ -11,12 +11,16 @@ contabilizados ou integrados com o checkout, ainda. :D
 
 2 - Use o código abaixo para usar o módulo na página que deseja:
 ```php
-<?php echo $this->getChildHtml('Facilestore_Quota_ProductQuota') ?>
+<?php echo $this->getLayout()->getBlock('Facilestore_Quota_ProductQuota')->setProduct($_product)->toHtml(); ?>
 ```
+3 - Sugiro colocar no **price.phtml** do Magento, assim em todos os lugares que mostrar o preço, irá mostrar as parcelas. Para isso, você edita o arquivo a abaixo e coloque o código acima, dentro da `<div class="price-box">`aonde você achar melhor para colocar o style depois: 
 
-3 - Caso esteja usando um template customizado, este código acima precisa ser colocado no arquivo respectivo ao seu tema. Então nos caminhos abaixo aonde está em negrito, você deve trocar de `base/default` por `SEU_TEMA/SEU_LAYOUT`.
+* Página detalhe do produto:
+>app/design/frontend/**base/default**/template/catalog/product/price.phtml
 
-4 - Você pode usar este código, nas seguintes páginas:
+4 - Mas se não quiser o modo acima, pode mexer somente no template de list e view. Caso esteja usando um template customizado, este código acima precisa ser colocado no arquivo respectivo ao seu tema. Então nos caminhos abaixo aonde está em negrito, você deve trocar de `base/default` por `SEU_TEMA/SEU_LAYOUT`.
+
+5 - Você pode usar este código, nas seguintes páginas:
 
 * Página detalhe do produto:
 >app/design/frontend/**base/default**/template/catalog/product/view.phtml
@@ -24,12 +28,12 @@ contabilizados ou integrados com o checkout, ainda. :D
 * Lista de produtos (Com isso já aparece na lista por categorias ou pela busca):
 >app/design/frontend/**base/default**/template/catalog/product/list.phtml
 
-5 - Limpa o cache
+6 - Limpa o cache
 >Sistema (System) > Gerenciar Cache (Cache Management)
 
-5 - Fazer logoff da administração.
+7 - Fazer logoff da administração.
 
-6 - Configurar o módulo da forma que precisar.
+8 - Configurar o módulo da forma que precisar.
 >Sistema (System) > Configurações (Configuration) > Facile Store Extensions > Parcelas Produtos
 
 ##Bugs
