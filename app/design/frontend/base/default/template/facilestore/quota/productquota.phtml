@@ -1,10 +1,4 @@
 <?php if($this->isEnable()): ?>
-    <?php if($this->isBoleto()): ?>
-    <div class="boleto_desconto">
-        <?php echo $this->getDescBoleto(); ?>
-    </div>
-    <?php endif; ?>
-
     <div class="parcelamento">
         <?php if($this->isCatalog()): ?>
             <?php $this->_setProduct($this->getProduct()); ?>
@@ -23,4 +17,10 @@
             <?php endif; ?>
         <?php endif; ?>
     </div>
+
+    <?php if($this->isBoleto()): ?>
+        <div class="boleto_desconto">
+            <?php echo $this->getDescBoleto(); ?>
+        </div>
+    <?php endif; ?>
 <?php endif; ?>

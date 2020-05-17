@@ -4,7 +4,7 @@
         <Facilestore_Quota>
             <version>0.0.1</version>
         </Facilestore_Quota>
-    </modules>   
+    </modules>
     <global>
         <blocks>
             <quota>
@@ -38,7 +38,7 @@
                     <file>facilestore_quota.xml</file>
                 </quota>
             </updates>
-        </layout>        
+        </layout>
     </frontend>
     <adminhtml>
         <acl>
@@ -75,6 +75,8 @@
             </general>
             <boleto>
                 <enable>1</enable>
+                <view_enable>1</view_enable>
+                <list_enable>0</list_enable>
                 <porcentagem_boleto>5</porcentagem_boleto>
                 <txt_boleto>#percent#% Desc. Boleto - #valor#</txt_boleto>
             </boleto>

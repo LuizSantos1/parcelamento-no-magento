@@ -14,6 +14,8 @@ class Facilestore_Quota_Block_Productquota extends Mage_Catalog_Block_Product_Ab
         $this->_configs['lista_produtos'] = Mage::getStoreConfig('facilestore_quota/general/lista_produtos');
         $this->_configs['lista_produtos_txt'] = Mage::getStoreConfig('facilestore_quota/general/lista_produtos_txt');
         $this->_configs['boleto_enable'] = Mage::getStoreConfig('facilestore_quota/boleto/enable');
+        $this->_configs['boleto_view'] = Mage::getStoreConfig('facilestore_quota/boleto/view_enable');
+        $this->_configs['boleto_list'] = Mage::getStoreConfig('facilestore_quota/boleto/list_enable');
         $this->_configs['porcentagem_boleto'] = Mage::getStoreConfig('facilestore_quota/boleto/porcentagem_boleto');
         $this->_configs['txt_boleto'] = Mage::getStoreConfig('facilestore_quota/boleto/txt_boleto');
     }
@@ -23,7 +25,17 @@ class Facilestore_Quota_Block_Productquota extends Mage_Catalog_Block_Product_Ab
     }
 
     public function isBoleto(){
-        return $this->_configs['boleto_enable'];
+        if($this->_configs['boleto_enable']) {
+            if($this->isCatalog() && $this->_configs['boleto_list']) {
+                return true;
+            }
+
+            if(!$this->isCatalog() && $this->_configs['boleto_view']) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function getDescBoleto(){

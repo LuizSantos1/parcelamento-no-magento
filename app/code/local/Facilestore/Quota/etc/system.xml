@@ -14,7 +14,7 @@
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
- 
+
             <groups>
                 <general translate="label" module="quota">
                     <label>Configurações de parcelas no produto</label>
@@ -23,7 +23,7 @@
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
- 
+
                     <fields>
                         <enable translate="label">
                             <label>Habilitar: </label>
@@ -120,11 +120,31 @@
                             <show_in_store>1</show_in_store>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                         </enable>
+                        <view_enable translate="label">
+                            <label>Mostrar no detalhe do produto ?</label>
+                            <comment>Exibir texto de desconto do boleto no detalhe do produto.</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </view_enable>
+                        <list_enable translate="label">
+                            <label>Mostrar na lista de produtos ?</label>
+                            <comment>Exibir texto de desconto do boleto na lista do produtos.</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_enable>
                         <porcentagem_boleto translate="label">
                             <label>Porcentagem Desc. Boleto: </label>
                             <comment>Porcetagem do desconto em pagamento com Boleto.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>2</sort_order>
+                            <sort_order>4</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -133,7 +153,7 @@
                             <label>Texto Boleto: </label>
                             <comment>Informe o texto para exibir, utilize as tags dinâmicas #percent# e #valor#, caso necessite. Ex.: #percent#% Desc Boleto - #valor#</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>3</sort_order>
+                            <sort_order>5</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
